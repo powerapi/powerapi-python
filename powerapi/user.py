@@ -20,12 +20,12 @@ class user:
 	def getSchoolName(self):
 		name = re.search(r'<div id="print-school">(.*?)<br>', self.homeContents, re.S)
 		
-		return name.groups()[0].strip()
+		return name.groups()[0].strip().encode('ascii')
 	
 	def getUserName(self):
 		name = re.search(r'<li id="userName" .*?<span>(.*?)<\/span>', self.homeContents, re.S)
 		
-		return name.groups()[0].strip()
+		return name.groups()[0].strip().encode('ascii')
 	
 	def getCourses(self):
 		return self.courses

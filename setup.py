@@ -5,7 +5,7 @@ except ImportError:
 
 setup(
     name='powerapi-python',
-    version='0.1',
+    version='0.1.1',
     description='Python API for PowerSchool',
     url='https://github.com/powerapi/powerapi-python',
     author='Henri Watson',
