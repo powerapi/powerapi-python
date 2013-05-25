@@ -4,7 +4,7 @@ Library for fetching information from PowerSchool SISes.
 
 Requirements
 ------------
-* Python 7
+* Python 2.7
 * PowerSchool >= 7.0.0; PowerSchool <= 7.6.2
 
 Usage
