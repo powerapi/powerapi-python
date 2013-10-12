@@ -57,7 +57,7 @@ class core:
 		
 		r = self.session.post(self.url + "guardian/home.html", data=fields)
 		
-		if not "Grades and Attendance" in r.text:
+		if not u'Grades and Attendance' in r.text:
 			pserror = re.search(r'<div class="feedback-alert">(.*?)<\/div>', r.text, re.S)
 			
 			if pserror:

@@ -10,10 +10,10 @@ class course:
 	def _populateCourse(self):
 		courseData = re.search('<td align="left">(.*?)(&nbsp;|&bbsp;)<br>(.*?)<a href="mailto:(.*?)">(.*?)<\/a><\/td>', self.html, re.S)
 		
-		self.name = courseData.groups()[0].encode('ascii')
+		self.name = courseData.groups()[0]
 		self.teacher = {
-			'name': courseData.groups()[4].encode('ascii'),
-			'email': courseData.groups()[3].encode('ascii')
+			'name': courseData.groups()[4],
+			'email': courseData.groups()[3]
 		}
 		
 		self.scores = {}
@@ -26,9 +26,9 @@ class course:
 			if score.groups()[1] == "--":
 				break
 			elif not scoreT[0].isdigit():
-				self.scores[URLbits.groups()[1].encode('ascii')] = int(scoreT[1])
+				self.scores[URLbits.groups()[1]] = int(scoreT[1])
 			else:
-				self.scores[URLbits.groups()[1].encode('ascii')] = int(scoreT[0])
+				self.scores[URLbits.groups()[1]] = int(scoreT[0])
 		
 	def getName(self):
 		return self.name
